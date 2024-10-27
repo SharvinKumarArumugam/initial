@@ -20,9 +20,7 @@ TARGET = st.text_input("Enter your name","sharvin")
 GENES = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!.'
 
 
-# Button to trigger the genetic algorithm
-if st.button("Run Genetic Algorithm"):
-    main()
+
 
 #initialization
 
@@ -39,6 +37,9 @@ def initialize_pop(TARGET):
   return population
 
 #fitness calculation
+# Button to trigger the genetic algorithm
+if st.button("Run Genetic Algorithm"):
+    main()
 #0 fitness means target found
 
 def fitness_cal(TARGET, chromo_from_pop):
