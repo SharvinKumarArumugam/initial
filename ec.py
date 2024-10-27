@@ -127,10 +127,7 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
       # we sort here first to compare the least fit population with the most fit new_gen
 
       population = replace(new_gen, population)
-    # Button to trigger the genetic algorithm
-        if st.button("Run Genetic Algorithm"):
-             main()
-      
+    
       if (population[0][1] == 0):
         st.write('Target found')
         st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
