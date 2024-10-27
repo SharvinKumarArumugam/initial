@@ -135,7 +135,9 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
       st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
       generation+=1
 
-
+# Button to trigger the genetic algorithm
+if st.button("Run Genetic Algorithm"):
+    main(POP_SIZE, MUT_RATE, TARGET, GENES)
 
 result = main(POP_SIZE, MUT_RATE, TARGET, GENES)
 
