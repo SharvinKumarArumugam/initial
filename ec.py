@@ -137,9 +137,9 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
 
 # Button to trigger the genetic algorithm
 if st.button("Run Genetic Algorithm"):
-    main(POP_SIZE, MUT_RATE, TARGET, GENES)
+    result = main(POP_SIZE, MUT_RATE, TARGET, GENES)
 
-result = main(POP_SIZE, MUT_RATE, TARGET, GENES)
+
 
 result
 
