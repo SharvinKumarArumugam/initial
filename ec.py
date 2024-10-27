@@ -19,6 +19,11 @@ TARGET = st.text_input("Enter your name","sharvin")
 #GENES: Options from which our population would be created.
 GENES = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!.'
 
+
+# Button to trigger the genetic algorithm
+if st.button("Run Genetic Algorithm"):
+    main()
+
 #initialization
 
 def initialize_pop(TARGET):
@@ -138,6 +143,3 @@ result = main(POP_SIZE, MUT_RATE, TARGET, GENES)
 
 result
 
-# Button to trigger the genetic algorithm
-if st.button("Run Genetic Algorithm"):
-    main()
