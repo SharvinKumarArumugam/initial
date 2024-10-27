@@ -128,8 +128,8 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
 
       population = replace(new_gen, population)
     # Button to trigger the genetic algorithm
-if st.button("Run Genetic Algorithm"):
-    main()
+        if st.button("Run Genetic Algorithm"):
+             main()
       
       if (population[0][1] == 0):
         st.write('Target found')
