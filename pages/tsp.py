@@ -1,5 +1,3 @@
-!pip install matplotlib
-
 import matplotlib.pyplot as plt
 from itertools import permutations, combinations
 from random import shuffle
