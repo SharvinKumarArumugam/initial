@@ -6,7 +6,7 @@ import numpy as np
 import statistics
 import pandas as pd
 import seaborn as sns
-import streamlit as st
+import streamlit as st 
 
 x = [0,3,6,7,15,10,16,5,8,1.5]
 y = [1,2,1,4.5,-1,2.5,11,6,9,12]
@@ -75,48 +75,8 @@ def initial_population(cities_list, n_population = 250):
         population_perms.append(list(possible_perms[i]))
 
     return population_perms
-
-#distance between two cities
-
-def dist_two_cities(city_1, city_2):
-
-    city_1_coords = city_coords[city_1]
-    city_2_coords = city_coords[city_2]
-    return np.sqrt(np.sum((np.array(city_1_coords) - np.array(city_2_coords))**2))
-
-def total_dist_individual(individual):
-
-    total_dist = 0
-    for i in range(0, len(individual)):
-        if(i == len(individual) - 1):
-            total_dist += dist_two_cities(individual[i], individual[0])
-        else:
-            total_dist += dist_two_cities(individual[i], individual[i+1])
-    return total_dist
-
-#population
-def initial_population(cities_list, n_population = 250):
-
-    """
-    Generating initial population of cities randomly selected from the all possible permutations
-    of the given cities.
-    Input:
-    1- Cities list
-    2- Number of population
-    Output:
-    Generated lists of cities
-    """
-
-    population_perms = []
-    possible_perms = list(permutations(cities_list))
-    random_ids = random.sample(range(0,len(possible_perms)),n_population)
-
-    for i in random_ids:
-        population_perms.append(list(possible_perms[i]))
-
-    return population_perms
-
-#distance between two cities
+    
+    #distance between two cities
 
 def dist_two_cities(city_1, city_2):
 
@@ -256,8 +216,6 @@ def run_ga(cities_names, n_population, n_generations, crossover_per, mutation_pe
     for i in best_fitness_indices:
         best_mixed_offspring.append(mixed_offspring[i])
 
-
-
     for i in range(0, n_generations):
         # if (i%10 == 0):
             # print("Generation: ", i)
@@ -300,7 +258,7 @@ def run_ga(cities_names, n_population, n_generations, crossover_per, mutation_pe
         random.shuffle(best_mixed_offspring)
 
     return best_mixed_offspring
-  
+
 best_mixed_offspring = run_ga(cities_names, n_population, n_generations, crossover_per, mutation_per)
 
 total_dist_all_individuals = []
@@ -316,7 +274,6 @@ st.write(minimum_distance)
 #shortest path
 # shortest_path = offspring_list[index_minimum]
 shortest_path = best_mixed_offspring[index_minimum]
-shortest_path
 st.write(shortest_path)
 
 x_shortest = []
